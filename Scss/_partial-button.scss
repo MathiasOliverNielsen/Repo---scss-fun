@@ -1,0 +1,10 @@
+// =====================
+// Button
+// =====================
+button {
+  @include button-style($accent-color);
+
+  &:hover {
+    background: darken($accent-color, 10%);
+  }
+}

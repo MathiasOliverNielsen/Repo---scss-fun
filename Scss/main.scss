@@ -1,53 +1,24 @@
-// imports
-@import "reset.scss";
 // =====================
-// Variables
-// =====================
-$bg-color: #b6b6b6b6;
-$text-color: #333;
-$accent-color: #4d8ac7;
-$nav-bg: #eee;
-$footer-bg: #efefef;
-$font-stack: "Manrope", sans-serif;
-
-// =====================
-// Mixins
+// Main SCSS File - Imports Only
 // =====================
 
-@mixin flex-center($gap: 1rem) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: $gap;
-}
+// Core files
+@use "reset.scss";
+@use "varriables.scss";
+@use "mixins.scss";
 
-@mixin container($max-width: 900px, $padding: 1rem) {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 $padding;
-}
+// Layout and components
+@use "partial-hedder+nav.scss";
+@use "partial-layout.scss";
+@use "partial-button.scss";
 
-@mixin box-shadow($x: 0, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.1)) {
-  box-shadow: $x $y $blur $color;
-}
+// Sections
+@use "partial-sectionOne.scss";
+@use "partial-sectionTwo.scss";
+@use "partial-sectionThree.scss";
 
-@mixin button-style($bg, $color: #fff) {
-  background: $bg;
-  color: $color;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-@mixin hover-color($color) {
-  transition: color 0.3s ease;
-  &:hover {
-    color: $color;
-  }
-}
+// Footer
+@use "partial-footer.scss";
 
 // =====================
 // Global Styles
@@ -63,145 +34,4 @@ body {
   background: $bg-color;
   color: $text-color;
   line-height: 1.6;
-}
-
-// =====================
-// Header & Nav
-// =====================
-header {
-  background: $nav-bg;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  @include box-shadow(0, 2px, 4px);
-}
-
-nav ul {
-  @include flex-center(2rem);
-  list-style: none;
-}
-
-nav a {
-  text-decoration: none;
-  color: $text-color;
-  font-weight: 500;
-  @include hover-color($accent-color);
-}
-
-// =====================
-// Main
-// =====================
-main {
-  @include container();
-  margin-top: 2rem;
-}
-
-section {
-  margin-bottom: 3rem;
-  padding: 2rem;
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  @include box-shadow(0, 4px, 8px, rgba(0, 0, 0, 0.08));
-  transition: box-shadow 0.3s ease;
-
-  &:hover {
-    @include box-shadow(0, 6px, 12px, rgba(0, 0, 0, 0.12));
-  }
-
-  h2 {
-    margin-bottom: 1rem;
-    color: $accent-color;
-  }
-}
-
-// =====================
-// Section One (First Section)
-// =====================
-#SectionOne {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 300px;
-
-  article {
-    text-align: center;
-    max-width: 600px;
-  }
-}
-
-// =====================
-// Section Two
-// =====================
-#SectionTwo {
-  h2 {
-    text-align: center;
-  }
-}
-
-// =====================
-// Button
-// =====================
-button {
-  @include button-style($accent-color);
-
-  &:hover {
-    background: darken($accent-color, 10%);
-  }
-}
-
-// =====================
-// Images (Section Three)
-// =====================
-#SectionThree {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  align-items: center;
-  justify-items: center;
-
-  img {
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    @include box-shadow(0, 4px, 8px, rgba(0, 0, 0, 0.15));
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-      @include box-shadow(0, 8px, 16px, rgba(0, 0, 0, 0.2));
-    }
-  }
-
-  // Responsive: stack on smaller screens
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-
-  @media (max-width: 1024px) and (min-width: 769px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-// =====================
-// Footer
-// =====================
-footer {
-  background: linear-gradient(135deg, #333 0%, #555 100%);
-  color: #fff;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  margin-top: 3rem;
-  border-top: 3px solid $accent-color;
-  @include box-shadow(0, -2px, 8px, rgba(0, 0, 0, 0.1));
-
-  p {
-    margin: 0;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
 }

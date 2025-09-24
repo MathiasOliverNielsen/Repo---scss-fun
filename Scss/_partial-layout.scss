@@ -1,0 +1,26 @@
+// =====================
+// Main Layout
+// =====================
+main {
+  @include container();
+  margin-top: 2rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  @include box-shadow(0, 4px, 8px, rgba(0, 0, 0, 0.08));
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    @include box-shadow(0, 6px, 12px, rgba(0, 0, 0, 0.12));
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    color: $accent-color;
+  }
+}

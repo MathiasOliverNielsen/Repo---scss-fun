@@ -1,0 +1,37 @@
+// Mixins
+// =====================
+
+@mixin flex-center($gap: 1rem) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+@mixin container($max-width: 900px, $padding: 1rem) {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $padding;
+}
+
+@mixin box-shadow($x: 0, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin button-style($bg, $color: #fff) {
+  background: $bg;
+  color: $color;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+@mixin hover-color($color) {
+  transition: color 0.3s ease;
+  &:hover {
+    color: $color;
+  }
+}

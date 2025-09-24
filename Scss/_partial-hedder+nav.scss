@@ -1,0 +1,26 @@
+// Header & Nav
+// =====================
+header {
+  background: $nav-bg;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  @include box-shadow(0, 2px, 4px);
+}
+
+nav {
+  ul {
+    @include flex-center(2rem);
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: $text-color;
+    font-weight: 500;
+    @include hover-color($accent-color);
+  }
+}
+
+// =====================
