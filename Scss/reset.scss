@@ -1,4 +1,5 @@
 /* ===== Reset CSS ===== */
+
 /* Box sizing rules */
 *,
 *::before,
@@ -51,6 +52,7 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -59,4 +61,4 @@ select {
     transition-duration: 0s !important;
     scroll-behavior: auto !important;
   }
-}/*# sourceMappingURL=reset.css.map */
+}
